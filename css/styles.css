@@ -1,0 +1,343 @@
+/* ===================================== 
+   Public API Request
+======================================== */
+
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  text-align: center;
+  background: rgba(235, 235, 235, 0.9);
+}
+
+header {
+  padding: 15px 5px 5px;
+}
+
+.header-inner-container {
+  max-width: 1180px;
+  margin: auto;
+}
+
+header h1 {
+  font-size: 1.25em;
+  color: rgba(50, 50, 50, 0.9);
+  margin-top: 35px;
+  text-align: center; /*                               Change #1 Added to center the hedaer*/
+}
+
+#warning {
+  /*                                                   Change #2 Id Added. Allows to format in red message 
+                                                                           for invalid searches*/
+  font-size: 12px;
+  color: red;
+  font-weight: bold;
+}
+
+#title {
+  /*                                                   Change #3 Id Added. Allows to format in red message 
+                                                                           to invite to order a new group */
+  font-size: 18px;
+  color: red;
+  font-weight: bold;
+}
+
+.search-input {
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(200, 200, 200, 0.9);
+  border-radius: 0.25rem 0 0 0.25rem;
+  max-width: 15rem; /*                                 Change #4 Modification. Because of width of the first/last
+                                                                               names introduced. Before 20 rem */
+  transition: 0.4s ease-out;
+  outline: none;
+}
+
+.search-input:active,
+.search-input:hover,
+.search-input:focus {
+  border: 1px solid rgba(50, 50, 50, 0.9);
+}
+
+.search-submit {
+  cursor: pointer;
+  height: 20px; /*                                     Change #5 Modification. Because of height of the Click 
+                                                                               for a new group button. Before 33px */
+  max-width: 150px; /*                                 Change #6 Added. Because of the Input forthe first/last 
+                                                                        names button  */
+  background: rgba(245, 245, 245, 0.9);
+  border-radius: 0 0.25rem 0.25rem 0;
+  border: 1px solid rgba(200, 200, 200, 0.9);
+  transition: 0.4s ease-out;
+  outline: none;
+}
+
+.search-submit:active,
+.search-submit:hover,
+.search-submit:focus {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(50, 50, 50, 0.9);
+}
+
+/* ===================================== 
+   Gallery
+======================================== */
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  max-width: 1280px; /*                                Change #7 Modification. Because I increased the the width 
+                                                                               of the cards.To see at least two 
+                                                                               cards in a row- Before 1200PX */
+  margin: auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  cursor: pointer;
+  width: 100%;
+  max-width: 450px; /*                                 Change #8 Modification. I increased the the width of the 
+                                                                               cards to have all the address in 
+                                                                               one single line. Heavily tested. 
+                                                                               Before 360px   */
+  margin: 10px 10px 20px;
+  padding: 10px;
+  background: rgba(
+    /*                                                 Change #9 Modification. Change background eequested by the 
+                                                                               Extra Credit. I used "flatuicolorpicker.com"
+                                                                               Before (245, 245, 245, 0.9 */
+      255,
+    249,
+    222,
+    1
+  );
+  border-radius: 0.25em;
+  border: 1px solid rgba(50, 50, 50, 0.3);
+  transition: 0.4s ease-out;
+  overflow: hidden;
+  box-shadow: 10px 10px #111111; /*                  Change #10 Added. Add box-shadow requested by the Extra Credit  
+                                                                          I used "flatuicolorpicker.com" */
+}
+
+.card-img {
+  width: 95px;
+  margin: 10px 15px auto 10px;
+  border-radius: 50%;
+}
+
+.card-info-container {
+  text-align: left;
+}
+
+.card-name {
+  margin: 20px auto 0;
+}
+
+.card-text,
+h3 {
+  /*                                                    Change #11 Added. To get more formatting flexibility on h3  */
+  font-family: "Comic Sans MS", cursive, sans-serif; /* Change #12 Added. Font change requested by the Extra Credit    
+                                                                          https://www.w3schools.com/cssref/css_websafe_fonts.asp*/
+  font-size: 0.9em;
+  color: rgba(
+    /*                                                  Change #13 Modified. Color change requested by the Extra Credit 
+                                                                              Before (50, 50, 50, 0.7)*/
+      77,
+    19,
+    209,
+    1
+  );
+  font-size: 0.9em;
+  margin: 7px auto;
+  transition: 0.4s ease-out;
+}
+
+.cap {
+  text-transform: capitalize;
+}
+
+/* ===================================== 
+   Modal
+======================================== */
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(
+    108,
+    122,
+    137,
+    0.5
+  ); /*                                                 Change #14 Modification. Change background eequested by the 
+                                                                                 Extra Credit. I used "flatuicolorpicker.com"
+                                                                                 Before (0, 0, 0, 0.7 */
+}
+
+.modal {
+  position: relative;
+  width: 95%;
+  max-width: 550px; /*                                    Change #15 Modification. I increased the the width of the 
+                                                                                  cards to have all the address in 
+                                                                                  one single line. Heavily tested. . 
+                                                                                  Before 420px */
+  min-height: 415px;
+  margin: 10px auto auto;
+  padding-bottom: 15px;
+  background: rgba(
+    255,
+    249,
+    222,
+    1
+  ); /*                                                  Change #16 Modification. Change background eequested by the 
+                                                                                  Extra Credit. I used "flatuicolorpicker.com"
+                                                                                  Before (255, 255, 255, 1 */
+  border-radius: 0.25em;
+  border: 1px solid rgba(100, 100, 100, 0.3);
+  transition: 0.4s ease-out;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.8);
+  outline: none;
+  border-radius: 0.25em;
+  border: 1px solid rgba(50, 50, 50, 0.3);
+}
+
+.modal-img {
+  width: 150px;
+  margin-top: 25px; /*                                       Change #17 Modification. I decreased to get the prev and 
+                                                                                     next buttons fully visible 
+                                                                                     Before 25px */
+  border-radius: 50%;
+}
+
+.modal-name {
+  margin-bottom: 5px;
+}
+
+.modal-text {
+  color: rgba(
+    77,
+    19,
+    209,
+    1
+  ); /*                                                       Change #18 Modified. Color change requested by the Extra Credit 
+                                                                                  Before (50, 50, 255, 1 */
+  border-radius: 0.25em;
+  margin: 10px;
+  width: 500px;
+}
+
+.modal hr {
+  width: 75%;
+  margin: 25px auto 30px;
+  border-color: rgba(200, 200, 200, 0.2);
+}
+
+.modal-btn-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  width: 95%;
+  max-width: 420px;
+  padding: 10px 15px 15px;
+  margin: 2px auto auto; /*                                       Change #19 Modification. I decreased to get the prev and 
+                                                                                          next buttons fully visible 
+                                                                                          Before 10px auto auto */
+  background: rgba(255, 255, 255, 1);
+  border-radius: 0.25em;
+  border: 1px solid rgba(100, 100, 100, 0.3);
+}
+
+.modal-btn-container .btn {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0.75em 1, 5em;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 0.35em;
+  transition: 0.4s ease-out;
+  outline: none;
+}
+
+/* ===================================== 
+   Media Queries
+======================================== */
+
+/* ===================================== 
+   Tablet
+======================================== */
+
+@media (min-width: 768px) {
+  .header-inner-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  .header-text-container {
+    text-align: center; /*                                        Change #20 Modified to center the hedaer. Before left*/
+  }
+
+  .search-container {
+    margin-top: 25px;
+  }
+
+  .modal {
+    margin-top: 20px; /*                                          Change #21 Modification. I decreased to get the prev and 
+                                                                                          next buttons fully visible 
+                                                                                          when increasing the width
+                                                                                          Before 100px */
+    background: rgba(255, 255, 255, 1);
+  }
+}
+
+/* ===================================== 
+   Desktop
+   Hover styles on desktop 
+======================================== */
+
+@media (min-width: 1024px) {
+  .card:hover {
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(50, 50, 50, 0.9);
+  }
+
+  .card:hover .card-text {
+    color: rgba(25, 25, 25, 1);
+  }
+
+  .btn:hover {
+    background: rgba(255, 255, 255, 1);
+    color: rgba(25, 25, 25, 1);
+  }
+}
